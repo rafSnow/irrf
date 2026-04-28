@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+:root {
+  --text: #111827;
+  --text-muted: #6b7280;
+  --bg: #f9fafb;
+  --bg-card: #ffffff;
+  --border: #f3f4f6;
+  --accent: #4f46e5;
+  --accent-soft: rgba(79, 70, 229, 0.1);
+  --shadow: rgba(0, 0, 0, 0.1) 0 4px 6px -1px, rgba(0, 0, 0, 0.06) 0 2px 4px -1px;
+}
+
+.dark {
+  --text: #f3f4f6;
+  --text-muted: #9ca3af;
+  --bg: #030712;
+  --bg-card: #111827;
+  --border: #1f2937;
+  --accent: #818cf8;
+  --accent-soft: rgba(129, 140, 248, 0.1);
+  --shadow: rgba(0, 0, 0, 0.3) 0 4px 6px -1px, rgba(0, 0, 0, 0.2) 0 2px 4px -1px;
+}
+
+@theme {
+  --color-indigo-50: var(--accent-soft);
+  --color-indigo-600: var(--accent);
+  --color-gray-50: var(--bg);
+  --color-white: var(--bg-card);
+  --color-gray-900: var(--text);
+  --color-gray-500: var(--text-muted);
+  --color-gray-200: var(--border);
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg);
+  color: var(--text);
+  @apply transition-colors duration-300;
+}
+
+@layer base {
+  * {
+    @apply border-gray-200;
+  }
+}
+
+/* Accessibility: Focus styles */
+*:focus-visible {
+  @apply outline-2 outline-indigo-600 outline-offset-2;
+}
